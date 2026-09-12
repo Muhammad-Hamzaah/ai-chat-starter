@@ -11,6 +11,7 @@ Isay "Hello World" samjho Agentic AI journey ka.
 import os
 from dotenv import load_dotenv
 from google import genai
+from google.genai import types
 
 # Step 1: .env file se API key load karo (security ke liye key kabhi
 # seedha code mein nahi likhte, hamesha .env file mein rakhte hain)
@@ -36,8 +37,13 @@ def get_ai_response(user_message: str) -> str:
     full_context = "\n".join(chat_history)
 
     response = client.models.generate_content(
-        model="gemini-2.0-flash",
+        model="gemini-3.6-flash",
         contents=full_context,
+        config=types.GenerateContentConfig(
+            automatic_function_calling=types.AutomaticFunctionCallingConfig(
+                disable=True
+            ),
+        ),
     )
 
     ai_reply = response.text
@@ -55,7 +61,7 @@ def main():
         user_input = input("\nYou: ").strip()
 
         if user_input.lower() == "quit":
-            print("\nChat khatam. Allah Hafiz!")
+            print("\nAllah Hafiz!")
             break
 
         if not user_input:
