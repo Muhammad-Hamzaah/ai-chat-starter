@@ -54,13 +54,13 @@ def get_ai_response(user_message: str) -> str:
 def main():
     print("=" * 50)
     print("AI Chat Starter")
-    print("Type 'Finish' to exit")
+    print("Type 'finish' to exit")
     print("=" * 50)
 
     while True:
         user_input = input("\nYou: ").strip()
 
-        if user_input.lower() == "Finish":
+        if user_input.lower() == "finish":
             print("\nAllah Hafiz!")
             break
 
