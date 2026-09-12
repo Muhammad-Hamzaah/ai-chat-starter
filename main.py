@@ -53,8 +53,8 @@ def get_ai_response(user_message: str) -> str:
 
 def main():
     print("=" * 50)
-    print("AI Chat Starter — Gemini API Project")
-    print("Type 'quit' to exit")
+    print("AI Chat Starter")
+    print("Type 'Finish' to exit")
     print("=" * 50)
 
     while True:
